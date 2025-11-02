@@ -10,3 +10,21 @@ Script para instalar **vários apps `.pkg` no macOS via pendrive/USB**, de forma
 - Pode rodar mesmo em pendrives **exFAT** (não depende do bit executável)
 
 ## 🗂️ Estrutura recomendada do pendrive
+
+/Volumes/InstallApps/
+├─ install.sh # script principal
+└─ AppPadrao/ # adicione aqui os seus .pkg (não incluídos)
+
+
+
+## ▶️ Como executar no macOS
+Com o pendrive montado como `/Volumes/InstallApps`:
+```bash
+sudo /bin/bash "/Volumes/InstallApps/install.sh" | tee ~/Desktop/InstallApps.log
+
+
+💾 Formato do pendrive
+
+exFAT (se também usa Windows) — funciona com o comando acima via /bin/bash
+
+APFS ou Mac OS Expandido (HFS+) (se só usar em Mac)
